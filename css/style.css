@@ -16,15 +16,28 @@ a {
 
 /* Проверить что другая жирность работает*/
 /* Подключение шрифта */
+
 @font-face {
   font-family: OpenSans;
-  src: url(../fonts/OpenSans-Regular.woff);
-  font-weight: 400;
+  src: local("OpenSans"), 
+    url(../fonts/OpenSans-Regular.woff2);
   font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: local("OpenSans"), 
+    url(../fonts/OpenSans-Bold.woff2);
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
 }
 
 body {
   font-family: OpenSans, sans-serif;
+  font-weight: 400;
 }
 
 /* Отключили отображение названия блоков без заголовков */
@@ -40,7 +53,8 @@ body {
   background-repeat: no-repeat;
   color: white;
   background-size: 100%;
-  height: 445px;
+  min-height: 445px;
+  /* height: auto; */
   padding-top: 27px;
 }
 
@@ -68,6 +82,7 @@ body {
 
 .header-link:nth-child(n+2) {
   padding: 0 0 0 35px;
+  
 }
 
 .header-title {
@@ -77,6 +92,7 @@ body {
   line-height: 74.97px;
   text-transform: uppercase;
   width: 680px;
+  /* width: 60%; */
   text-align: center;
 }
 
@@ -115,7 +131,7 @@ h3:after {
   content: "";
   background: #e1d9bd;
   width: 66px;
-  height: 3px;
+  /* height: 3px; */
   margin: 10px auto;
   display: block;
 }
@@ -128,7 +144,8 @@ h3:after {
   background-image:
       linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
       url(../images/trend1.jpg);
-  height: 320px;
+  min-height: 320px;
+  /* max-height: 640px; */
   background-repeat: no-repeat;
   background-size: 99% 320px;
   width: 25%;
@@ -182,12 +199,12 @@ h3:after {
   word-spacing: 15px;
 }
 
-/* .news {
-  margin: 0 0 0 0;
-} */
-
 .new {
   display: flex;
+}
+
+.img-new {
+  max-height: 295px;
 }
 
 .new:nth-child(n+2) {
